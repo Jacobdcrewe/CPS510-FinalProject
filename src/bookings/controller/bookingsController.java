@@ -186,10 +186,13 @@ public class bookingsController {
     //gets return number of the booking
     @FXML
     private void getReturnNo(ActionEvent event) throws ClassNotFoundException, SQLException {
+        //creates list of bookings objects with a service number equal to the return number of the input service number
         ObservableList<Bookings> list = bookingsDAO.getReturnNo(Integer.parseInt(serviceNo.getText()));
+        //updates table
         populateTable(list);
     }
 
+    //updates transport type. Same as departure and destination but with transport
     @FXML
     private void updateTrans(ActionEvent event) throws ClassNotFoundException, SQLException {
         try {
@@ -205,15 +208,23 @@ public class bookingsController {
             throw e;
         }
     }
-
+    
+    //provides function of back button
     @FXML
     private void back(ActionEvent event) throws IOException {
-        Stage customerStage = new Stage();
+        //creates new screen stage
+        Stage primaryStage = new Stage();
+        //calls the fxml of the stage wanting to be opened
         Parent root = FXMLLoader.load(getClass().getResource("/selectionPage/controller/selectionPageView.fxml"));
+        //creates new scene with the fxml code
         Scene scene = new Scene(root);
-        customerStage.setTitle("Selection Page");
-        customerStage.setScene(scene);
-        customerStage.show();
+        //titles the stage
+        primaryStage.setTitle("Selection Page");
+        //setting the stage to have the scene inside it
+        primaryStage.setScene(scene);
+        //showing the stage
+        primaryStage.show();
+        //hiding the current window
         ((Node) (event.getSource())).getScene().getWindow().hide();
 
     }

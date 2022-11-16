@@ -58,12 +58,12 @@ public class LoginViewController {
             }
             
             if(admin) {
-                Stage customerStage = new Stage();
+                Stage primaryStage = new Stage();
                 Parent root = FXMLLoader.load(getClass().getResource("/selectionPage/controller/selectionPageView.fxml"));
                 Scene scene = new Scene(root);
-                customerStage.setTitle("Selection Page");
-                customerStage.setScene(scene);
-                customerStage.show();
+                primaryStage.setTitle("Selection Page");
+                primaryStage.setScene(scene);
+                primaryStage.show();
                 ((Node)(event.getSource())).getScene().getWindow().hide();
             }
             
@@ -88,22 +88,22 @@ public class LoginViewController {
 
     @FXML
     private void signUp(ActionEvent event) throws IOException {
-        Stage customerStage = new Stage();
+        Stage primaryStage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("/signup/controller/signupView.fxml"));
             Scene scene = new Scene(root);
-            customerStage.setTitle("Create Account");
-            customerStage.setScene(scene);
-            customerStage.show();
+            primaryStage.setTitle("Create Account");
+            primaryStage.setScene(scene);
+            primaryStage.show();
     }
 
     @FXML
     private void openOptions(ActionEvent event) throws IOException {
-        Stage customerStage = new Stage();
+        Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/options/controller/optionsView.fxml"));
         Scene scene = new Scene(root);
-        customerStage.setTitle("Table Management");
-        customerStage.setScene(scene);
-        customerStage.show();
+        primaryStage.setTitle("Table Management");
+        primaryStage.setScene(scene);
+        primaryStage.show();
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }
     

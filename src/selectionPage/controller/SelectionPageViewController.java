@@ -37,12 +37,12 @@ public class SelectionPageViewController {
  
     @FXML
     private void createBooking(ActionEvent event) throws IOException {
-        Stage customerStage = new Stage();
+        Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/bookings/controller/bookingsView.fxml"));
         Scene scene = new Scene(root);
-        customerStage.setTitle("Bookings");
-        customerStage.setScene(scene);
-        customerStage.show();
+        primaryStage.setTitle("Bookings");
+        primaryStage.setScene(scene);
+        primaryStage.show();
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
@@ -56,23 +56,23 @@ public class SelectionPageViewController {
 
     @FXML
     private void customersManager(ActionEvent event) throws IOException {
-        Stage customerStage = new Stage();
+        Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/customers/controller/customersView.fxml"));
         Scene scene = new Scene(root);
-        customerStage.setTitle("Customers");
-        customerStage.setScene(scene);
-        customerStage.show();
+        primaryStage.setTitle("Customers");
+        primaryStage.setScene(scene);
+        primaryStage.show();
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
     @FXML
     private void back(ActionEvent event) throws IOException {
-        Stage customerStage = new Stage();
+        Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/login/controller/loginView.fxml"));
         Scene scene = new Scene(root);
-        customerStage.setTitle("Login");
-        customerStage.setScene(scene);
-        customerStage.show();
+        primaryStage.setTitle("Login");
+        primaryStage.setScene(scene);
+        primaryStage.show();
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
