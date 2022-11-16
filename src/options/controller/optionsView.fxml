@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="options.controller.OptionsViewController">
+   <children>
+      <GridPane layoutX="14.0" layoutY="59.0" prefHeight="326.0" prefWidth="240.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#drop" prefHeight="59.0" prefWidth="240.0" style="-fx-background-radius: 50;" text="Drop Tables">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#create" prefHeight="60.0" prefWidth="320.0" style="-fx-background-radius: 50;" text="Create Tables" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#populate" prefHeight="60.0" prefWidth="286.0" style="-fx-background-radius: 50;" text="Populate Tables" GridPane.rowIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#query" prefHeight="60.0" prefWidth="376.0" style="-fx-background-radius: 50;" text="Query Tables" GridPane.rowIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <Label layoutX="14.0" layoutY="14.0" text="Table Commands" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="386.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="output" editable="false" layoutX="300.0" layoutY="69.0" prefHeight="274.0" prefWidth="378.0" promptText="Output" wrapText="true" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="21.600000000000023" AnchorPane.topAnchor="69.0" />
+      <Button layoutX="518.0" layoutY="359.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="60.0" text="Back" AnchorPane.bottomAnchor="14.600000000000001" AnchorPane.rightAnchor="22.0" />
+   </children>
+</AnchorPane>

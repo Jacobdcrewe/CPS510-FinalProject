@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="1039.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookings.controller.bookingsController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="1039.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Pane prefHeight="33.0" prefWidth="640.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="-1.0" prefHeight="18.0" prefWidth="352.0" text="Bookings">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <GridPane layoutX="14.0" layoutY="34.0" minHeight="340.0" minWidth="235.0" prefHeight="460.0" prefWidth="298.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="298.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="180.8" minHeight="-Infinity" prefHeight="130.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="166.00000610351566" minHeight="-Infinity" prefHeight="147.9999755859375" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="186.79998779296875" minHeight="-Infinity" prefHeight="164.4000244140625" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane prefHeight="137.0" prefWidth="308.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.39996948242188" minWidth="-Infinity" prefWidth="152.80001220703124" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.60000610351562" minWidth="87.60003051757812" prefWidth="145.59998779296873" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField fx:id="departure" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="116.0" promptText="Departure" GridPane.columnIndex="1" />
+                        <TextField fx:id="destination" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="116.0" promptText="Destination" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="modeOfTransport" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="116.0" promptText="Transport" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Departure:" />
+                        <Label text="Destination" GridPane.rowIndex="1" />
+                        <Label minWidth="-Infinity" prefHeight="18.0" prefWidth="145.0" text="Mode of Transport:" GridPane.rowIndex="2" />
+                        <Button fx:id="clrBt" minHeight="30.0" mnemonicParsing="false" onAction="#clearText" prefHeight="30.0" prefWidth="74.0" text="Clear" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="11.0" />
+                           </font></Button>
+                        <Button fx:id="addBt" minHeight="30.0" mnemonicParsing="false" onAction="#insertBooking" prefHeight="30.0" prefWidth="126.0" text="Add Booking" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="11.0" />
+                           </font></Button>
+                     </children>
+                  </GridPane>
+                  <BorderPane prefHeight="153.0" prefWidth="235.0" GridPane.rowIndex="2">
+                     <bottom>
+                        <TextArea fx:id="output" minWidth="200.0" prefHeight="149.0" prefWidth="235.0" wrapText="true" BorderPane.alignment="CENTER" />
+                     </bottom>
+                     <left>
+                        <Label text="Console Output:" BorderPane.alignment="CENTER" />
+                     </left>
+                  </BorderPane>
+               </children>
+            </GridPane>
+            <GridPane layoutX="328.0" layoutY="34.0" prefHeight="460.0" prefWidth="694.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="328.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="34.0">
+              <columnConstraints>
+                <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="562.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints fillHeight="false" maxHeight="171.19998779296876" minHeight="-Infinity" prefHeight="110.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="356.8000183105469" minHeight="10.0" prefHeight="40.20001831054688" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="356.8000183105469" minHeight="-Infinity" prefHeight="309.5999816894531" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane prefHeight="112.0" prefWidth="754.0" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                    <columnConstraints>
+                      <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="-Infinity" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="105.99998168945312" minHeight="-Infinity" prefHeight="63.59998779296875" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="106.19998779296876" minHeight="-Infinity" prefHeight="47.600012207031256" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="682.0">
+                          <columnConstraints>
+                            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="160.0" />
+                              <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="160.0" />
+                            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="160.0" />
+                              <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="180.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="52.60001220703125" minHeight="-Infinity" prefHeight="19.000006103515624" vgrow="SOMETIMES" />
+                            <RowConstraints fillHeight="false" maxHeight="97.4" minHeight="-Infinity" prefHeight="38.599999999999994" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Service Number:" />
+                              <Label text="New Destination:" GridPane.columnIndex="2" />
+                              <Label text="New Departure:" GridPane.columnIndex="1" />
+                              <TextField fx:id="serviceNo" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" promptText="Service Number" GridPane.rowIndex="1" />
+                              <TextField fx:id="newDep" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="150.0" promptText="New Departure" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="newDestination" minHeight="-Infinity" minWidth="-Infinity" prefColumnCount="16" prefHeight="26.0" prefWidth="150.0" promptText="New Destination" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label minWidth="-Infinity" prefHeight="18.0" prefWidth="174.0" text="New Mode Of Transport:" GridPane.columnIndex="3" />
+                              <TextField fx:id="newTransport" minHeight="-Infinity" minWidth="-Infinity" prefColumnCount="16" prefHeight="26.0" prefWidth="150.0" promptText="New Transport" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="682.0" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                          <columnConstraints>
+                            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="93.20001220703125" minWidth="-Infinity" prefWidth="93.0" />
+                            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="142.39997558593748" minWidth="-Infinity" prefWidth="125.0" />
+                              <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="170.80000000000004" minWidth="-Infinity" prefWidth="125.0" />
+                              <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="170.80000000000004" minWidth="-Infinity" prefWidth="125.0" />
+                              <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="80.0" minWidth="-Infinity" prefWidth="79.0" />
+                              <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="190.0" minWidth="-Infinity" prefWidth="136.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="searchBt" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#searchBookings" prefHeight="30.0" prefWidth="80.0" text="Search" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#updateDep" prefHeight="30.0" prefWidth="115.0" text="Update Departure" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#updateDest" prefHeight="30.0" prefWidth="115.0" text="Update Destination" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#delBooking" prefHeight="30.0" prefWidth="69.0" text="Delete" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#updateTrans" prefHeight="30.0" prefWidth="115.0" text="Update Transport" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showAll" prefHeight="30.0" prefWidth="135.0" text="Show All Bookings" GridPane.columnIndex="5">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+                  <TableView fx:id="customerTable" minHeight="-Infinity" minWidth="-Infinity" prefHeight="266.0" prefWidth="683.0" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                    <columns>
+                      <TableColumn fx:id="colSerNo" minWidth="-Infinity" prefWidth="100.0" text="Service No" />
+                      <TableColumn fx:id="colDep" minWidth="-Infinity" prefWidth="150.0" text="Departure" />
+                        <TableColumn fx:id="colDest" minWidth="-Infinity" prefWidth="150.0" text="Destination" />
+                        <TableColumn fx:id="colTransport" minWidth="-Infinity" prefWidth="150.0" text="Mode Of Transport" />
+                        <TableColumn fx:id="colReturnNo" minWidth="-Infinity" prefWidth="125.0" text="Return No" />
+                    </columns>
+                  </TableView>
+                  <GridPane prefHeight="41.0" prefWidth="288.0" GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.20001220703125" minWidth="-Infinity" prefWidth="136.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="150.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#createReturnNo" prefHeight="30.0" prefWidth="140.0" text="Create Return Trip" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Button>
+                        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#getReturnNo" prefHeight="30.0" prefWidth="126.0" text="Get Return Trip" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+            <Button fx:id="backBt" layoutX="962.0" layoutY="503.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="60.0" text="Back" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
