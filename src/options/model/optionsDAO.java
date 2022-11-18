@@ -116,8 +116,8 @@ public class optionsDAO {
 
     //creates all the tables
     public static String[] populateTables() throws ClassNotFoundException, SQLException {
-        String sql = "INSERT INTO CUSTOMERS(username, userPass, cardNo)"
-                + "VALUES ('Jacob','b','1234567891234567');"
+        String sql = "INSERT INTO CUSTOMERS(username, userPass, cardNo, loyaltyPoints)"
+                + "VALUES ('Jacob','b','1234567891234567', 540);"
                 + "INSERT INTO CUSTOMERS(username, userPass, cardNo)"
                 + "VALUES('Steve','d','1234567890123456');"
                 + "INSERT INTO CUSTOMERS(username, userPass, cardNo)"
