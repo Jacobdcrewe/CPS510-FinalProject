@@ -252,7 +252,8 @@ public class bookingsController {
             for (int i = 0; i < list.size(); i++) {
                 innerloop:
                 for (int j = 0; j < list.size(); j++) {
-                    if (list.get(i).getDep().equals(list.get(j).getDest()) && list.get(i).getDest().equals(list.get(j).getDep())) {
+                    if (list.get(i).getDep().equals(list.get(j).getDest()) && list.get(i).getDest().equals(list.get(j).getDep()) && (list.get(i).getReturnNo() == 0)) {
+                        System.out.println("updated serno:" +list.get(i).getSerNo());
                         bookingsDAO.updateReturnNo(list.get(i).getSerNo(), list.get(j).getSerNo());
                         break innerloop;
                     }
