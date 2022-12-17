@@ -2,6 +2,8 @@
 Overview<br />
 The CPS510-Final Project involves creating a database from start to finish. The database chosen was The Travel Management System. This maintains the bookings and cancellations of a travel agency. It can be used by a corporation to keep track of their travel bookings (by air, land or water) or give access to their customers to book trips themselves
 
+The content is my homework so please do not copy but feel free to use it as a reference.
+
 <br />
 Installation <br />
 1. Download the zip file submitted in Assignment 9<br />
